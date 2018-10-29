@@ -1,7 +1,8 @@
 package com.demoaut.newtours.certification.stepdefinitions;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 
 import java.util.List;
 
@@ -22,34 +23,48 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 
+/** Clase que implementa los pasos de la la prueba definida en el archivo NewToursRegister.feature, usando el patron Screenplay. 
+ * 
+ * Se define el objeto "hisBrowser" para manejar el navegador.
+ * Aplicando Screenplay, se define el actor llamado "Diego".
+ * 
+ * Se crea una instancia de la pagina New Tours para pasarla a la tarea "OpenTheBrowser", la cual abre el navegador.
+ * El actor ingresa a la pagina de registro en la tarea "GoTo", llamando el target mapeado
+ * 
+ * Los datos de la prueba, definidos en el feature, se reciben como una lista del modelo Register creado en el paquete MODELS
+ * Para verificar el correcto registro, se revisa que la nota en pantalla genere un nombre de usuario.*/
+
 public class NewToursRegisterStepDefinitions {
 
-	@Managed (driver = "chrome", uniqueSession = true) // Anotación para manejar el navegador Chrome
-	private WebDriver hisBrowser; // Instancia del objeto WebDriver, que se pasa al ACTOR para que este lo maneje
+	@Managed (driver = "chrome", uniqueSession = true)
+	private WebDriver hisBrowser;
 	
-	private Actor diego = Actor.named("Diego"); // Aplicando Screenplay, se define el actor llamado "Diego"
+	private Actor diego = Actor.named("Diego");
 	
-	private NewToursHomePage newToursHomePage; // Se crea una instancia de la pagina New Tours para pasarla a la TAREA que abre el navegador
+	private NewToursHomePage newToursHomePage;
 	
 	@Before
 	public void setUp() {
-		diego.can(BrowseTheWeb.with(hisBrowser)); // Se usa la habilidad del ACTOR para navegar con la instancia del objeto WebDriver
+		diego.can(BrowseTheWeb.with(hisBrowser));
 	}
 	
-	@Given("^that Diego wants to register on New Tours$") // Precondiciones de la prueba - Ingreso a la pagina de registro de New Tours
+	// Precondiciones de la prueba - Ingreso a la pagina de registro de New Tours
+	@Given("^that Diego wants to register on New Tours$")
 	public void thatDiegoWantsToRegisterOnNewTours() {
 		diego.wasAbleTo(
-				OpenTheBrowser.on(newToursHomePage), // El ACTOR abre el navegador en la pagina de New Tours en esta TAREA, con la instancia de la pagina creada anteriormente
-				GoTo.thePage(NewToursHomePage.REGISTER_PAGE_BUTTON));  // El ACTOR se dirige a la pagina de registro en esta TAREA, llamando el Target mapeado 
+				OpenTheBrowser.on(newToursHomePage), 
+				GoTo.thePage(NewToursHomePage.REGISTER_PAGE_BUTTON));
 	}
 
-	@When("^he enters all of the next personal information$") // Ejecucion de la prueba - Ingreso de datos en la pagina de registro
-	public void heEntersAllOfTheNextPersonalInformation(List<RegisterModel> information) { // Se reciben los datos del feature como una lista del modelo de Registro creado
-		diego.attemptsTo(Register.his(information.get(0))); // El ACTOR registra su informacion dentro de los campos y presiona click para registrarse, en esta TAREA
+	// Ejecucion de la prueba - Ingreso de datos en la pagina de registro
+	@When("^he enters all of the next personal information$")
+	public void heEntersAllOfTheNextPersonalInformation(List<RegisterModel> information) {
+		diego.attemptsTo(Register.his(information.get(0)));
 	}
 
-	@Then("^he should see a note with his \"([^\"]*)\"$") // Validación de la prueba - Verificación de un registro correcto
-	public void heShouldSeeANoteWithHis(String username) { // Se revisa que se haya creado un userName correcto	
-		diego.should(seeThat(theNote.displayed(), containsString(username))); // El ACTOR verifica que la nota en pantalla contenga su nombre de usuario
+	// Validación de la prueba - Verificación de un registro correcto
+	@Then("^he should see a note with an userName$")
+	public void heShouldSeeANoteWithAnUserName() {
+		diego.should(seeThat(theNote.displayed(), is(not("Note: Your user name is ."))));
 	}
 }

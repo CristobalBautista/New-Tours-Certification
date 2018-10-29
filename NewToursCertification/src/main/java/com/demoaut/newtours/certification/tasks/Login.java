@@ -7,18 +7,26 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;;
 
+	/** Tarea donde se realiza el login del usuario con sus credenciales.
+ 	* <p>
+ 	* Se ingresan los valores de usuario y contraseña en los campos respectivos, y se realiza click sobre el boton de ingreso.
+ 	*/
+
 public class Login implements Task{
 
-	private LoginModel loginModel;
+	private LoginModel loginModel; // Variable que maneja el objeto LoginModel recibido como parametro en el constructor
 	
 	public Login (LoginModel loginModel) {
 		this.loginModel = loginModel;
 	}
 	
+	
 	@Override
+	@Step("{0} has entered all of the login values and click on the login button")
 	public <T extends Actor> void performAs(T actor) {
 		actor.attemptsTo(
 				Enter.theValue(loginModel.getuserName()).into(NewToursHomePage.USERNAME),

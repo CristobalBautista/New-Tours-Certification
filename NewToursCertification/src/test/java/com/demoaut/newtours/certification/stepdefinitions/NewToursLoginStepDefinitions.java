@@ -20,32 +20,47 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 
-public class NewToursLoginStepDefinitions {
+	/** Clase que implementa los pasos de la prueba definida en el archivo NewToursLogin.feature, usando el patron Screenplay. 
+	 * 
+	 * Se define el objeto "hisBrowser" para manejar el navegador.
+	 * Se define el actor "diego", sobre el que se ejecutaran los comandos.
+	 * 
+	 * Se crea una instancia de la pagina New Tours para pasa a la tarea "OpenTheBrowser", la cual abre el navegador
+	 * 
+	 * Los datos de la prueba, definidos en el feature, se reciben como una lista del modelo Login creado en el paquete MODELS
+	 * 
+	 * Para verificar el ingreso correcto, se revisa que la ventana de busqueda de vuelo aparece
+	 * */
 
-	@Managed (driver = "chrome") // Anotación para manejar el navegador Chrome
-	private WebDriver hisBrowser; // Instancia del objeto WebDriver, que se pasa al ACTOR para que este lo maneje
+public class NewToursLoginStepDefinitions {
 	
-	private Actor diego = Actor.named("Diego"); // Aplicando Screenplay, se define el actor llamado "Diego"
+	@Managed (driver = "chrome") 
+	private WebDriver hisBrowser; 
 	
-	private NewToursHomePage newToursHomePage; // Se crea una instancia de la pagina New Tours para pasarla a la TAREA que abre el navegador
+	private Actor diego = Actor.named("Diego"); 
+	
+	private NewToursHomePage newToursHomePage; 
 	
 	@Before
 	public void setUp() {
-		diego.can(BrowseTheWeb.with(hisBrowser)); // Se usa la habilidad del ACTOR para navegar con la instancia del objeto WebDriver
+		diego.can(BrowseTheWeb.with(hisBrowser));
 	}
 	
-	@Given("^that Diego wants to enters into the New Tours page$") // Precondiciones de la prueba - Ingreso a la pagina de New Tours
+	// Precondiciones de la prueba - Ingreso a la pagina de New Tours
+	@Given("^that Diego wants to enters into the New Tours page$")
 	public void thatDiegoWantsToEntersIntoTheNewToursPage() {
-		diego.wasAbleTo(OpenTheBrowser.on(newToursHomePage)); // El ACTOR abre el navegador en la pagina de New Tours en esta TAREA, con la instancia de la pagina creada anteriormente
+		diego.wasAbleTo(OpenTheBrowser.on(newToursHomePage));
 	}
 
-	@When("^he logins into the page with his credentials$") // Ejecucion de la prueba - Ingreso de credenciales en la pagina de entrada
-	public void heLoginsIntoThePageWithHisCredentials(List<LoginModel> credentials) { // Se reciben los datos del feature como una lista del modelo de Login creado
-		diego.attemptsTo(Login.withHis(credentials.get(0))); // El ACTOR ingresa su informacion de logueo e ingresa a New Tours, en esta TAREA
+	// Ejecucion de la prueba - Ingreso de credenciales en la pagina de entrada
+	@When("^he logins into the page with his credentials$") 
+	public void heLoginsIntoThePageWithHisCredentials(List<LoginModel> credentials) {
+		diego.attemptsTo(Login.withHis(credentials.get(0)));
 	}
 	
-	@Then("^he should see in the screen the flight search window$") // Validación de la prueba - Verificación de un login correcto
-	public void heShouldSeeInTheScreenTheFlightSearchWindow() { // Se revisa que la ventana de busqueda de vuelo aparece
-		diego.should(seeThat(theFlightSearch.windowIsDisplayed()));  // El ACTOR verifica que en la pantalla se observe el formulario de bsuqueda de vuelo
+	// Validación de la prueba - Verificación de un login correcto
+	@Then("^he should see in the screen the flight search window$") 
+	public void heShouldSeeInTheScreenTheFlightSearchWindow() { 
+		diego.should(seeThat(theFlightSearch.windowIsDisplayed()));
 	}
 }

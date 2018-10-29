@@ -11,7 +11,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		features = "src/test/resources/features",
 		glue = "com.demoaut.newtours.certification.stepdefinitions",
 		snippets = SnippetType.CAMELCASE,
-		tags = {"@Register"}
+		tags = {"@Register or @Login"}
 )
 public class NewToursRunner {
 }

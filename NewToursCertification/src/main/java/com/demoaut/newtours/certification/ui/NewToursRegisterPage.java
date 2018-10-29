@@ -4,6 +4,12 @@ import org.openqa.selenium.By;
 
 import net.serenitybdd.screenplay.targets.Target;
 
+/** UI donde se mapean los elementos de la pagina de registro de New Tours. 
+ * <p>
+ * Se mapean las areas de texto para cada uno de los elementos a ingresar y el boton de enviar informacion.<br>
+ * Se mapea la nota donde se indica el nombre de usuario, para verificar que se creo un usuario correcto.
+ */
+
 public class NewToursRegisterPage {
 	
 	public static final Target FIRST_NAME = Target.the("First name").located(By.name("firstName"));	
@@ -21,5 +27,5 @@ public class NewToursRegisterPage {
 	public static final Target CONFIRM_PASSWORD = Target.the("Confirm password").located(By.name("confirmPassword"));
 	public static final Target REGISTER_BUTTON = Target.the("Register button").located(By.name("register"));
 	
-	public static final Target REGISTER_NOTE = Target.the("Register note result").locatedBy("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[3]/a/font/b");
+	public static final Target REGISTER_NOTE = Target.the("Register note result").locatedBy("//b[contains(text(),'Note:')]");
 }

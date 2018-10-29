@@ -14,16 +14,23 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.Step;
 
+	/** Tarea donde se dirige a una sub-pagina de la pagina principal, dando clic sobre un elemento.
+	* <p>
+	* En caso que no cargue la pagina de registro, se realiza manejo de excepciones.
+	*/
+
 public class GoTo implements Task{
 	
-	private Target newToursPage; // Target con el que se define la pestaña de New Tours a la que se desea ir
+	/* Variable que maneja el objecto Target recibido como parametro en el constructor
+	   Con el target definido, se dirige a la pagina de New Tours a la que se desea ir*/
+	private Target newToursPage; 
 	
-	public GoTo (Target newToursPage) { // Constructor de la TAREA para llevar el Target recibido al Target que se maneja internamente en la clase
+	public GoTo (Target newToursPage) { 
 		this.newToursPage = newToursPage;
 	}
 
 	@Override
-	@Step ("")
+	@Step ("{0} has clicked on a button to go to the register page")
 	public <T extends Actor> void performAs(T actor) {		
 		actor.attemptsTo(Click.on(newToursPage));
 		actor.should(seeThat(the(NewToursRegisterPage.REGISTER_BUTTON), isCurrentlyVisible())

@@ -11,9 +11,14 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
+	/** Tarea donde se realiza el ingreso de la información en la pagina de registro.
+	* <p>
+	* Se ingresan los valores solicitados por el registro, y se realiza click sobre el boton de enviar.
+	*/
+
 public class Register implements Task {
 
-	private RegisterModel registerModel;
+	private RegisterModel registerModel; // Variable que maneja el objeto RegisterModel recibido como parametro en el constructor
 	
 	public Register (RegisterModel registerModel) {
 		this.registerModel = registerModel;

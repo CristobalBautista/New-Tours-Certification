@@ -10,9 +10,9 @@ Feature: New Tours Register
     When he enters all of the next personal information
       | firstName   | lastName   | phone   | email   | address1   | address2   | city   | state   | postalCode   | userName   | country   | password   | confirmPassword   |
       | <firstName> | <lastName> | <phone> | <email> | <address1> | <address2> | <city> | <state> | <postalCode> | <userName> | <country> | <password> | <confirmPassword> |
-    Then he should see a note with his "<userName>"
+    Then he should see a note with an userName
 
     Examples: 
-      | firstName | lastName  | phone   | email                    | address1       | address2         | city     | state        | postalCode | userName       | country  | password    | confirmPassword |
-   #   | Diego     | Bautista  | 2345812 | diego.bautista@gmail.com | Cra. 56A 51-81 | Apto 223         | Medellin | Antioquia    |            | diego.bautista | COLOMBIA | casemiro123 | casemiro123     |
-      | Pacho     | Rodriguez |  121231 | pacho.alfonso@gmail.com  | Cll. 52A 31-41 | Apto 312 Torre 5 | Bogota   | Cundinamarca |            |                | COLOMBIA | casemiro123 | casemiro123     |
+      | firstName | lastName  | phone   | email                    | address1       | address2         | city     | state        | postalCode | country  | userName       | password    | confirmPassword |
+      | Diego     | Bautista  | 2345812 | diego.bautista@gmail.com | Cra. 56A 51-81 | Apto 223         | Medellin | Antioquia    |            | COLOMBIA | diego.bautista | casemiro123 | casemiro123     |
+      | Pacho     | Rodriguez |  121231 | pacho.alfonso@gmail.com  | Cll. 52A 31-41 | Apto 312 Torre 5 | Bogota   | Cundinamarca |            | COLOMBIA |                | casemiro123 | casemiro123     |
