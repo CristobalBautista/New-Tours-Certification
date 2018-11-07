@@ -6,10 +6,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-	/** Pregunta donde se verifica la nota mostrada en pantalla luego del registro.
-	 * <p>
-	 * Se devuelve un objeto Question tipo String, el cual contiene el texto de la nota.
-	 */
+/** Pregunta donde se verifica la nota mostrada en pantalla luego del registro.
+ * <p>
+ * Se devuelve un objeto Question tipo String, el cual contiene el texto de la nota.
+ */
 
 public class theNote implements Question<String>{
 

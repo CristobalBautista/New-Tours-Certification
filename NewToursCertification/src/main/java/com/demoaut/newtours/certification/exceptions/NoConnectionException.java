@@ -1,9 +1,9 @@
 package com.demoaut.newtours.certification.exceptions;
 
-	/** Manejo de excepciones para los eventos donde una pagina o un elemento de la pagina no carga.
-	* <p>
-	* Se definen los mensajes cuando la pagina no carga y cuando la pagina se cae durante el proceso de carga.
-	*/
+/** Manejo de excepciones para los eventos donde una pagina o un elemento de la pagina no carga.
+* <p>
+* Se definen los mensajes cuando la pagina no carga y cuando la pagina se cae durante el proceso de carga.
+*/
 
 public class NoConnectionException extends AssertionError {
 

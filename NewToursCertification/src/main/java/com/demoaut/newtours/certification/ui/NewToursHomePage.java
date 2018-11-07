@@ -6,11 +6,11 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 
-	/** UI donde se mapean los elementos de la pagina principal de New Tours. 
-	 * <p>
-	 * Se mapean los botones de login y de ingreso a la pagina de registro, las areas de texto para usuario y contraseña.<br>
-	 * Se mapea el formulario de login para certificar que ha cargado la pagina.
-	 */
+/** UI donde se mapean los elementos de la pagina principal de New Tours. 
+ * <p>
+ * Se mapean los botones de login y de ingreso a la pagina de registro, las areas de texto para usuario y contraseña.<br>
+ * Se mapea el formulario de login para certificar que ha cargado la pagina.
+ */
 
 @DefaultUrl("http://newtours.demoaut.com/") // Con la URL por defecto, se va a la pagina principal de New Tours
 public class NewToursHomePage extends PageObject{

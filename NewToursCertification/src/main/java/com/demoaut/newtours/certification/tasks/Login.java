@@ -11,10 +11,10 @@ import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;;
 
-	/** Tarea donde se realiza el login del usuario con sus credenciales.
- 	* <p>
- 	* Se ingresan los valores de usuario y contraseña en los campos respectivos, y se realiza click sobre el boton de ingreso.
- 	*/
+/** Tarea donde se realiza el login del usuario con sus credenciales.
+* <p>
+* Se ingresan los valores de usuario y contraseña en los campos respectivos, y se realiza click sobre el boton de ingreso.
+*/
 
 public class Login implements Task{
 

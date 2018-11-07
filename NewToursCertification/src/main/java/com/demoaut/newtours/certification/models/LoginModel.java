@@ -1,8 +1,8 @@
 package com.demoaut.newtours.certification.models;
 
-	/** Modelo para almacenar los datos de usuario y contraseña, en las pruebas de Login.
-	 * <p>
-	 * Los datos almacenados son userName y password*/
+/** Modelo para almacenar los datos de usuario y contraseña, en las pruebas de Login.
+ * <p>
+ * Los datos almacenados son userName y password*/
 
 public class LoginModel {
 

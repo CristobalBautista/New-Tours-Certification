@@ -1,9 +1,9 @@
 package com.demoaut.newtours.certification.models;
 
-	/** Modelo para almacenar los datos de registro, en las pruebas de Register.
-	 * <p>
-	 * Los datos almacenados son firstName, lastName, phone, email, address1, address2, city, state, postalCode, country,
-	 * userName, password and confirmPassword*/
+/** Modelo para almacenar los datos de registro, en las pruebas de Register.
+ * <p>
+ * Los datos almacenados son firstName, lastName, phone, email, address1, address2, city, state, postalCode, country,
+ * userName, password and confirmPassword*/
 
 public class RegisterModel {
 	private String firstName;
@@ -57,7 +57,7 @@ public class RegisterModel {
 	}
 	
 	public String getcountry() {
-		return this.country;
+		return this.country.toUpperCase();
 	}
 	
 	public String getuserName() {

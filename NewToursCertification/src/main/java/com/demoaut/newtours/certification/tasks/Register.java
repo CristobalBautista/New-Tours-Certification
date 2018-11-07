@@ -11,10 +11,10 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
-	/** Tarea donde se realiza el ingreso de la información en la pagina de registro.
-	* <p>
-	* Se ingresan los valores solicitados por el registro, y se realiza click sobre el boton de enviar.
-	*/
+/** Tarea donde se realiza el ingreso de la información en la pagina de registro.
+* <p>
+* Se ingresan los valores solicitados por el registro, y se realiza click sobre el boton de enviar.
+*/
 
 public class Register implements Task {
 
@@ -36,7 +36,7 @@ public class Register implements Task {
 				Enter.theValue(registerModel.getcity()).into(NewToursRegisterPage.CITY),
 				Enter.theValue(registerModel.getstate()).into(NewToursRegisterPage.STATE),
 				Enter.theValue(registerModel.getpostalCode()).into(NewToursRegisterPage.POSTAL_CODE),
-				SelectFromOptions.byVisibleText(registerModel.getcountry().toUpperCase()).from(NewToursRegisterPage.COUNTRY),
+				SelectFromOptions.byVisibleText(registerModel.getcountry()).from(NewToursRegisterPage.COUNTRY),
 				Enter.theValue(registerModel.getuserName()).into(NewToursRegisterPage.EMAIL),				
 				Enter.theValue(registerModel.getpassword()).into(NewToursRegisterPage.PASSWORD),
 				Enter.theValue(registerModel.getconfirmPassword()).into(NewToursRegisterPage.CONFIRM_PASSWORD),

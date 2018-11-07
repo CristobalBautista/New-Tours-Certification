@@ -20,17 +20,17 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 
-	/** Clase que implementa los pasos de la prueba definida en el archivo NewToursLogin.feature, usando el patron Screenplay. 
-	 * 
-	 * Se define el objeto "hisBrowser" para manejar el navegador.
-	 * Se define el actor "diego", sobre el que se ejecutaran los comandos.
-	 * 
-	 * Se crea una instancia de la pagina New Tours para pasa a la tarea "OpenTheBrowser", la cual abre el navegador
-	 * 
-	 * Los datos de la prueba, definidos en el feature, se reciben como una lista del modelo Login creado en el paquete MODELS
-	 * 
-	 * Para verificar el ingreso correcto, se revisa que la ventana de busqueda de vuelo aparece
-	 * */
+/** Clase que implementa los pasos de la prueba definida en el archivo NewToursLogin.feature, usando el patron Screenplay. 
+ * 
+ * Se define el objeto "hisBrowser" para manejar el navegador.
+ * Se define el actor "diego", sobre el que se ejecutaran los comandos.
+ * 
+ * Se crea una instancia de la pagina New Tours para pasa a la tarea "OpenTheBrowser", la cual abre el navegador
+ * 
+ * Los datos de la prueba, definidos en el feature, se reciben como una lista del modelo Login creado en el paquete MODELS
+ * 
+ * Para verificar el ingreso correcto, se revisa que la ventana de busqueda de vuelo aparece
+ * */
 
 public class NewToursLoginStepDefinitions {
 	

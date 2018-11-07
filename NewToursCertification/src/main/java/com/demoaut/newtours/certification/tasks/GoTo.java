@@ -14,10 +14,10 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.Step;
 
-	/** Tarea donde se dirige a una sub-pagina de la pagina principal, dando clic sobre un elemento.
-	* <p>
-	* En caso que no cargue la pagina de registro, se realiza manejo de excepciones.
-	*/
+/** Tarea donde se dirige a una sub-pagina de la pagina principal, dando clic sobre un elemento.
+* <p>
+* En caso que no cargue la pagina de registro, se realiza manejo de excepciones.
+*/
 
 public class GoTo implements Task{
 	

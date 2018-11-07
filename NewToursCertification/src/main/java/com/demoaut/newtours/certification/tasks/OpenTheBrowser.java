@@ -14,10 +14,10 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 import net.thucydides.core.annotations.Step;;
 
-	/** Tarea donde se abre el navegador y se dirige a la pagina web ingresada como parametro.
-	 * <p>
-	 *  En caso que no abra el navegador y se cargue la pagina, se realiza manejo de excepciones.
-	 */
+/** Tarea donde se abre el navegador y se dirige a la pagina web ingresada como parametro.
+ * <p>
+ *  En caso que no abra el navegador y se cargue la pagina, se realiza manejo de excepciones.
+ */
 
 public class OpenTheBrowser implements Task { 
 
